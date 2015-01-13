@@ -4,13 +4,15 @@
  * watch 下的livrereload 与其一一对应
  *
  */
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
-    require('load-grunt-tasks')(grunt);
-    require('time-grunt')(grunt);
+    require('load-grunt-tasks')(grunt);//自动加载grunt任务
+    //初始化配置
     grunt.initConfig({
+        //grunt-contrib-watch配置
         watch: {
-            demo: {
+            //demo为定义监测任务的名字
+            demo: { 
                 files: ['web/*.*'],
                 options: {
                     livereload: 5000
@@ -23,6 +25,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+        //grunt-contrib-connect配置
         connect: {
             demo: {
                 options: {
@@ -48,6 +51,6 @@ module.exports = function (grunt) {
             }
         }
     });
-    grunt.registerTask('demo', ['connect:demo', 'watch:demo']);
-    grunt.registerTask('dev', ['connect:dev', 'watch:dev']);
+    grunt.registerTask('demo', ['connect:demo', 'watch:demo']);//注册任务到grunt
+    grunt.registerTask('dev', ['connect:dev', 'watch:dev']);//注册任务到grunt
 };
