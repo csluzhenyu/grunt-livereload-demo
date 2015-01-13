@@ -1,6 +1,10 @@
 # grunt-livereload-demo
 
- 利用[grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect) 与 grunt-contrib-watch 当监测指定文件被`增加`,`改变`,`删除`时，执行预定义任务
+ 利用[grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect) 与 [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch) 当监测指定文件被`增加`,`改变`,`删除`时，执行预定义任务
+ 
+## 开始
+
+假如你没有使用过 [Grunt](http://gruntjs.com/) , 确保学习完 [Getting Started](http://gruntjs.com/getting-started) 向导, 它解释了如何创造一个 [Gruntfile](http://gruntjs.com/sample-gruntfile) 和如何安装与使用一个grunt插件
 
 ### 运行方法
 `npm install`
