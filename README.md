@@ -5,9 +5,15 @@
 ### 运行方法
 `npm install`
 
+安装依赖的包
+
 `grunt demo`
 
+运行grunt的demo 任务
+
 `grunt dev`
+
+运行grunt的dev 任务
 
 
 ###相关参数：
