@@ -28,3 +28,5 @@
 ###相关提示：
 
 `livereload`在watch和connect中,都需要设置，并且对应的值需要一致
+`hostname`为`*` 可以使局域网中，任意设备通过ip访问
+`base`的路径是相对项目的根目录
