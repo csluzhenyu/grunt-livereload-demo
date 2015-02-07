@@ -6,19 +6,19 @@
  */
 module.exports = function(grunt) {
 
-    require('load-grunt-tasks')(grunt);//自动加载grunt任务
+    require('load-grunt-tasks')(grunt); //自动加载grunt任务
     //初始化配置
     grunt.initConfig({
         //grunt-contrib-watch配置
         watch: {
-            //demo为定义监测任务的名字
-            demo: { 
+            //live为定义监测任务的名字
+            livereload: {
                 files: ['web/*.*'],
                 options: {
                     livereload: 5000
                 }
             },
-            dev: {
+            livereload1: {
                 files: ['web1/*.*'],
                 options: {
                     livereload: 3030
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         },
         //grunt-contrib-connect配置
         connect: {
-            demo: {
+            server: {
                 options: {
                     base: "web",
                     port: 1111,
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
                     }
                 }
             },
-            dev: {
+            server1: {
                 options: {
                     base: "web1",
                     port: 2222,
@@ -51,6 +51,6 @@ module.exports = function(grunt) {
             }
         }
     });
-    grunt.registerTask('demo', ['connect:demo', 'watch:demo']);//注册任务到grunt
-    grunt.registerTask('dev', ['connect:dev', 'watch:dev']);//注册任务到grunt
+    grunt.registerTask('server', ['connect:server', 'watch:livereload']); //注册任务到grunt
+    grunt.registerTask('server1', ['connect:server1', 'watch:livereload1']); //注册任务到grunt
 };
