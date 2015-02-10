@@ -23,7 +23,16 @@ module.exports = function(grunt) {
                 options: {
                     livereload: 3030
                 }
-            }
+            },
+            sass: {
+                files: ['src/scss/*.scss','src/*.html'],
+                options: {
+                    livereload: 4040,
+                    debounceDelay: 1000
+                },
+                tasks: ['newer:sass']
+
+            },
         },
         //grunt-contrib-connect配置
         connect: {
@@ -48,9 +57,31 @@ module.exports = function(grunt) {
                         target: 'http://127.0.0.1:2222'
                     }
                 }
+            },
+            server2: {
+                options: {
+                    base: "src",
+                    port: 3333,
+                    hostname: '*',
+                    livereload: 4040,
+                    open: {
+                        target: 'http://127.0.0.1:3333'
+                    }
+                }
+            }
+        },
+        sass: {
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: {
+                    'src/css/main.css': 'src/scss/main.scss'
+                }
             }
         }
     });
     grunt.registerTask('server', ['connect:server', 'watch:livereload']); //注册任务到grunt
     grunt.registerTask('server1', ['connect:server1', 'watch:livereload1']); //注册任务到grunt
+    grunt.registerTask('server2', ['connect:server2', 'watch:sass'])
 };
