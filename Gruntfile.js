@@ -24,7 +24,7 @@ module.exports = function(grunt) {
                     livereload: 3030
                 }
             },
-            sass: {
+            sass: { 
                 files: ['src/scss/*.scss','src/*.html'],
                 options: {
                     livereload: 4040,
@@ -83,5 +83,6 @@ module.exports = function(grunt) {
     });
     grunt.registerTask('server', ['connect:server', 'watch:livereload']); //注册任务到grunt
     grunt.registerTask('server1', ['connect:server1', 'watch:livereload1']); //注册任务到grunt
+    //通过newer，可以避免watch中，对sass多余的编译
     grunt.registerTask('server2', ['connect:server2', 'watch:sass'])
 };
